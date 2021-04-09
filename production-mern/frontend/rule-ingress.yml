@@ -1,8 +1,8 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: s-mern-backend
-  namespace: staging
+  name: mern-frontend
+  namespace: production
   annotations:
 
     ## Untuk menaikan batas upload file
@@ -12,10 +12,10 @@ metadata:
 
 spec:
   rules:
-  - host: s-backend.aiueocacicuceco.site
+  - host: frontend.aiueocacicuceco.site
     http:
       paths:
       #- path: /belajar
       - backend:
-          serviceName: s-mern-backend
-          servicePort: 4000
+          serviceName: mern-frontend
+          servicePort: 3000

@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: s-mern-frontend
-  namespace: staging
+  name: mern-frontend
+  namespace: production
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: s-mern-frontend
-      metadata: s-mern-frontend
+      name: mern-frontend
+      metadata: mern-frontend
   template:
     metadata:
       labels:
-        name: s-mern-frontend
-        metadata: s-mern-frontend
+        name: mern-frontend
+        metadata: mern-frontend
     spec:
       containers:
-      - name: s-mern-frontend
-        image: indraraspati/s-mern-frontend:1.0
+      - name: mern-frontend
+        image: indraraspati/mern-frontend:1.0
         ports:
         - containerPort: 3000
 
@@ -25,14 +25,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: s-mern-frontend
-  namespace: staging
+  name: mern-frontend
+  namespace: production
 spec:
   #type: LoadBalancer
   ports:
     - port: 3000
       #nodePort: 30080
   selector:
-          name: s-mern-frontend
+          name: mern-frontend
 ---
 

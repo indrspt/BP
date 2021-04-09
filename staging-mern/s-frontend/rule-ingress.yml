@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: frontend-staging
+  name: s-mern-frontend
   namespace: staging
   annotations:
 
@@ -12,10 +12,10 @@ metadata:
 
 spec:
   rules:
-  - host: frontend-staging.aiueocacicuceco.site
+  - host: s-frontend.aiueocacicuceco.site
     http:
       paths:
       #- path: /belajar
       - backend:
-          serviceName: frontend-staging
+          serviceName: s-mern-frontend
           servicePort: 3000
